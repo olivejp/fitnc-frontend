@@ -6,7 +6,7 @@ import {SessionStorageService} from "ngx-webstorage";
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
   isLogged = false;
@@ -21,23 +21,17 @@ export class SignInComponent implements OnInit {
   }
 
   signIn() {
-    this.authService.googleAuth()
-      .then(value => {
-        if (value) {
-
-        }
-      })
-      .catch(reason => console.error(reason));
+    this.authService.googleAuth();
   }
 
-  signOut() {
+  signUp() {
     this.authService.signOut()
       .then(_ => console.log('SIgn out'))
       .catch(reason => console.error(reason));
   }
 
   test() {
-    const user = this.sessionService.retrieve('user');
+    const user = JSON.parse(this.sessionService.retrieve('user'));
     this.utilisateurService.findByUid(user.uid)
       .subscribe(value1 => console.log(value1));
   }

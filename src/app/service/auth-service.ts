@@ -104,7 +104,7 @@ export class AuthService {
     if (!user) {
       return Promise.reject('Aucun utilisateur a enregistré.');
     }
-    this.sessionStorage.store('user', user);
+    this.sessionStorage.store('user', JSON.stringify(user));
     return user.getIdToken(true).then((idToken: any) => {
       this.sessionStorage.store(tokenName, idToken);
       return user;

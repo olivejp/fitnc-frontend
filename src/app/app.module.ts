@@ -10,9 +10,10 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UtilisateurService} from "./service/utilisateur-service";
-import { SignInComponent } from './sign-in/sign-in.component';
+import {SignInComponent} from './sign-in/sign-in.component';
 import {JWT_OPTIONS, JwtModule} from "@auth0/angular-jwt";
 import {LocalStorageService, NgxWebstorageModule, SessionStorageService} from "ngx-webstorage";
+import {PrimengModule} from "./primeng.module";
 
 export const prefix = 'fitnc';
 export const tokenName = 'token';
@@ -44,11 +45,12 @@ export function jwtOptionsFactory(
   imports: [
     HttpClientModule,
     BrowserModule,
+    PrimengModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AppRoutingModule,
-    NgxWebstorageModule.forRoot({ prefix: prefix, separator: '-' }),
+    NgxWebstorageModule.forRoot({prefix: prefix, separator: '-'}),
     JwtModule.forRoot({
       jwtOptionsProvider: {
         provide: JWT_OPTIONS,

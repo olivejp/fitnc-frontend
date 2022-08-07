@@ -1,3 +1,11 @@
-<button *ngIf="!isLogged" type="button" (click)="signIn()">Connect with Google</button>
-<button *ngIf="isLogged" type="button" (click)="signOut()">Disconnect</button>
-<button *ngIf="isLogged" type="button" (click)="test()">Test</button>
+<div class="h-full flex flex-column justify-content-center align-items-center">
+  <p-card header="Connectez vous" styleClass="sign-in-card">
+    Voici le contenu de ma card
+    <ng-template pTemplate="footer">
+      <div class="flex flex-column justify-content-center align-items-stretch" style="gap: 1em">
+        <p-button class="p-button-text" type="button" (click)="signIn()">Se connecter avec Google</p-button>
+        <p-button class="p-button-text" type="button" (click)="signUp()">Créer un compte</p-button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
