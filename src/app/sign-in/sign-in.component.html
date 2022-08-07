@@ -1,0 +1,3 @@
+<button *ngIf="!isLogged" type="button" (click)="signIn()">Connect with Google</button>
+<button *ngIf="isLogged" type="button" (click)="signOut()">Disconnect</button>
+<button *ngIf="isLogged" type="button" (click)="test()">Test</button>

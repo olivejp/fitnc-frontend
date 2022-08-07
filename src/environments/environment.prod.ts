@@ -1,5 +1,7 @@
 export const environment = {
   production: true,
+  backendServer: 'localhost:8080',
+  backendProtocol: 'http://',
   firebase: {
     apiKey: "AIzaSyCh1JXX3tFZs3LKBxSxd8mCx-bIfCHvNCM",
     authDomain: "fitnc-7be2e.firebaseapp.com",
