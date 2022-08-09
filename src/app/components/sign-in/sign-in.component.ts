@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../service/auth-service";
-import {UtilisateurService} from "../service/utilisateur-service";
+import {AuthService} from "../../service/auth-service";
+import {UtilisateurService} from "../../service/utilisateur-service";
 import {SessionStorageService} from "ngx-webstorage";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -12,12 +13,17 @@ export class SignInComponent implements OnInit {
   isLogged = false;
 
   constructor(private authService: AuthService,
+              private router: Router,
               private sessionService: SessionStorageService,
               private utilisateurService: UtilisateurService) {
   }
 
   ngOnInit(): void {
-    this.authService.isLoggedIn().subscribe(isLogged => this.isLogged = isLogged);
+    this.authService.isLoggedIn().subscribe(isLogged => {
+      if (isLogged) {
+        this.router.navigate(['/dashboard']);
+      }
+    });
   }
 
   signIn() {

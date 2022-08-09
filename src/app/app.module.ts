@@ -10,10 +10,11 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UtilisateurService} from "./service/utilisateur-service";
-import {SignInComponent} from './sign-in/sign-in.component';
+import {SignInComponent} from './components/sign-in/sign-in.component';
 import {JWT_OPTIONS, JwtModule} from "@auth0/angular-jwt";
 import {LocalStorageService, NgxWebstorageModule, SessionStorageService} from "ngx-webstorage";
-import {PrimengModule} from "./primeng.module";
+import {PrimengModule} from "./shared/primeng.module";
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 export const prefix = 'fitnc';
 export const tokenName = 'token';
@@ -40,7 +41,8 @@ export function jwtOptionsFactory(
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    DashboardComponent
   ],
   imports: [
     HttpClientModule,

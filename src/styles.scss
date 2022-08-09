@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+  background-color: #393939;
+}
+
+body {
+  height: 100%;
+  font-family: "Noto Sans";
+}
+
+div.p-card.p-component {
+  background-color: #4f4f4f;
+}
+
+button.p-element.p-button.p-component {
+  background: #a503e5;
+  border: #a503e5;
+}
