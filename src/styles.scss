@@ -1,14 +1,18 @@
 @import "variables";
 
+* {
+  font-family: "poppins-regular", sans-serif;
+}
+
 .sinisuka {
   font-family: 'sinisuka', 'arial', sans-serif;
 }
 
-.primary-background{
+.primary-background {
   background-color: $primary-color;
 }
 
-.secondary-color{
+.secondary-color {
   color: $secondary-color;
 }
 
@@ -19,7 +23,6 @@ html {
 
 body {
   height: 100%;
-  font-family: "Noto Sans";
   color: $color-on-background;
   margin: 0 !important;
 }

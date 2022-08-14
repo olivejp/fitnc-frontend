@@ -1,9 +1,50 @@
+.poppins-thin {
+  font-family: 'poppins-thin', 'arial', sans-serif;;
+}
+
+.poppins-light {
+  font-family: 'poppins-light', 'arial', sans-serif;;
+}
+
+.poppins-bold {
+  font-family: 'poppins-bold', 'arial', sans-serif;;
+}
+
+.poppins-black {
+  font-family: 'poppins-black', 'arial', sans-serif;;
+}
+
+@font-face {
+  font-family: poppins-thin;
+  src: url(assets/poppins/Poppins-Thin.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: poppins-light;
+  src: url(assets/poppins/Poppins-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: poppins-bold;
+  src: url(assets/poppins/Poppins-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: poppins-black;
+  src: url(assets/poppins/Poppins-Black.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: poppins-regular;
+  src: url(assets/poppins/Poppins-Regular.ttf) format("truetype");
+}
+
 @font-face {
   font-family: sinisuka;
-  src: url(assets/Sinisuka.otf) format("opentype");
+  src: url(assets/sinisuka/Sinisuka.otf) format("opentype");
 }
 
 @font-face {
   font-family: sinisuka-swashes;
-  src: url(assets/SinisukaSwashes-Regular.otf) format("opentype");
+  src: url(assets/sinisuka/SinisukaSwashes-Regular.otf) format("opentype");
 }
