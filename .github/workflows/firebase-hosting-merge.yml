@@ -18,3 +18,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FITNC_7BE2E }}'
           channelId: live
           projectId: fitnc-7be2e
+          target: frontend
