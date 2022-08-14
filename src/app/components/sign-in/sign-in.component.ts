@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth-service";
-import {UtilisateurService} from "../../service/utilisateur-service";
-import {SessionStorageService} from "ngx-webstorage";
 import {Router} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {MessageService} from "primeng/api";
+import firebase from "firebase/compat";
+import FirebaseError = firebase.FirebaseError;
 
 @Component({
   selector: 'app-sign-in',
@@ -10,12 +12,17 @@ import {Router} from "@angular/router";
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  isLogged = false;
+  form: FormGroup;
+  isLoading = false;
 
   constructor(private authService: AuthService,
+              private fb: FormBuilder,
               private router: Router,
-              private sessionService: SessionStorageService,
-              private utilisateurService: UtilisateurService) {
+              private messageService: MessageService) {
+    this.form = this.fb.group({
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, Validators.required]
+    });
   }
 
   ngOnInit(): void {
@@ -27,18 +34,43 @@ export class SignInComponent implements OnInit {
   }
 
   signIn() {
-    this.authService.googleAuth();
+    if (this.form.valid) {
+      this.isLoading = true;
+      const email = this.form.controls['email'].value;
+      const password = this.form.controls['password'].value;
+      this.authService.signIn(email, password)
+        .then(__assign => {
+          this.isLoading = false;
+          this.router.navigate(['/dashboard']);
+        })
+        .catch((reason: FirebaseError) => {
+          this.isLoading = false;
+          switch (reason.code) {
+            case 'auth/wrong-password':
+              this.messageService.add({
+                severity: 'error',
+                summary: 'Erreur authentification',
+                detail: 'Mauvais mot de passe.'
+              });
+              break;
+            case 'auth/too-many-requests':
+              this.messageService.add({
+                severity: 'error',
+                summary: 'Erreur authentification',
+                detail: 'Trop de requête.'
+              });
+              break;
+          }
+        });
+    }
   }
 
-  signUp() {
-    this.authService.signOut()
-      .then(_ => console.log('SIgn out'))
-      .catch(reason => console.error(reason));
+
+  signInWithGoogle(): Promise<unknown> {
+    return this.authService.googleAuth();
   }
 
-  test() {
-    const user = JSON.parse(this.sessionService.retrieve('user'));
-    this.utilisateurService.findByUid(user.uid)
-      .subscribe(value1 => console.log(value1));
+  createAccount(): Promise<boolean> {
+    return this.router.navigate(['/create-account']);
   }
 }

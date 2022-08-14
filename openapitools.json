@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "5.1.0",
+    "generators": {
+      "type": {
+        "generatorName": "typescript-angular",
+        "inputSpec": "openapi.json",
+        "output": "src/app/shared/generated",
+        "removeOperationIdPrefix": true,
+        "skipValidateSpec": true,
+        "typeMappings": "date=Date,DateTime=Date",
+        "templateDir": "oas-template",
+        "additionalProperties": {
+          "apiModulePrefix": "Deveo",
+          "configurationPrefix": "Deveo",
+          "enumPropertyNaming": "UPPERCASE",
+          "fileNaming": "kebab-case",
+          "sortParamsByRequiredFlag": false,
+          "sortModelPropertiesByRequiredFlag": false,
+          "modelFileSuffix": ".gen.model",
+          "modelSuffix": "Gen",
+          "serviceFileSuffix": ".gen.service",
+          "serviceSuffix": "ServiceGen",
+          "supportsES6": "true"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<div class="h-full flex flex-row justify-content-center align-items-center img-background">
+  <p-card header="Créer un compte" class="flex-basis-25" styleClass="sign-in-card">
+    <form [formGroup]="form" (submit)="signUp()" class="flex flex-column align-items-stretch gap-5">
+
+       <span class="p-float-label">
+      <input id="email-input" type="text" class="w-full" pInputText [formControlName]="fields.email">
+      <label for="email-input">Email</label>
+    </span>
+
+      <span class="p-float-label">
+      <input id="name-input" type="text" class="w-full" pInputText [formControlName]="fields.nom">
+      <label for="name-input">Nom</label>
+    </span>
+
+      <span class="p-float-label">
+      <input id="surname-input" type="text" class="w-full" pInputText [formControlName]="fields.prenom">
+      <label for="surname-input">Prénom</label>
+    </span>
+
+      <span class="p-float-label">
+      <input id="telephone-input" type="number" class="w-full" pInputText [formControlName]="fields.telephone">
+      <label for="telephone-input">Téléphone</label>
+    </span>
+
+      <span class="p-float-label">
+        <p-calendar id="dob-input" inputStyleClass="w-full" class="flex flex-row"
+                    placeholder="dd.mm.yyyy"
+                    [formControlName]="fields.dateNaissance"
+                    dateFormat="dd.mm.yy">
+        </p-calendar>
+        <label for="dob-input">Date de naissance</label>
+      </span>
+
+      <button pButton class="w-full" label="Créer un compte" icon="pi pi-user-plus" iconPos="left"
+              type="submit"></button>
+    </form>
+  </p-card>
+</div>

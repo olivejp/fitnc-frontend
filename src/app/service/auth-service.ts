@@ -35,33 +35,26 @@ export class AuthService {
   signIn(email: string, password: string): Promise<any> {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
-      .then((result) => this.setUserData(result.user))
-      .catch((error) => {
-        window.alert(error.message);
-      });
+      .then((result) => this.setUserData(result.user));
   }
 
   // Sign up with email/password
   signUp(email: string, password: string) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign
-        up and returns promise */
-        this.sendVerificationMail();
-        this.setUserData(result.user);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+      .then(result => this.sendVerificationMail()
+        .then(_ => this.setUserData(result.user)));
   }
 
   // Send email verfificaiton when new user sign up
-  sendVerificationMail() {
+  sendVerificationMail(): Promise<void> {
     return this.afAuth.currentUser
-      .then((u: any) => u.sendEmailVerification())
-      .then(() => {
-        this.router.navigate(['verify-email-address']);
+      .then((u: firebase.User | null) => {
+        if (u) {
+          return u.sendEmailVerification();
+        } else {
+          return;
+        }
       });
   }
 
@@ -79,7 +72,7 @@ export class AuthService {
 
   // Returns true when user is looged in and email is verified
   isLoggedIn(): Observable<boolean> {
-    return this.afAuth.user.pipe(map(user => !!user?.emailVerified));
+    return this.afAuth.user.pipe(map(user => !!user));
   }
 
   // Sign in with Google
@@ -118,5 +111,9 @@ export class AuthService {
       this.sessionStorage.clear(tokenName);
       this.router.navigate(['sign-in']);
     });
+  }
+
+  getUserData(): firebase.User {
+    return JSON.parse(this.sessionStorage.retrieve('user'));
   }
 }

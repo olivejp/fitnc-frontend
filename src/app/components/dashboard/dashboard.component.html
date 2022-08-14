@@ -1,1 +1,4 @@
-<p>dashboard works!</p>
+<div style="position: fixed; top: 0; right: 0; left: 0" class="flex flex-row justify-content-end primary-background">
+  <p-button [label]="username" icon="pi pi-user" (onClick)="menu.toggle($event)"></p-button>
+</div>
+<p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>

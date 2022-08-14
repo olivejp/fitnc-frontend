@@ -1,19 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+.sinisuka {
+  font-family: 'sinisuka', 'arial', sans-serif;
+}
+
+.primary-background{
+  background-color: $primary-color;
+}
+
+.secondary-color{
+  color: $secondary-color;
+}
+
 html {
   height: 100%;
-  background-color: #393939;
+  background-color: $html-background-color;
 }
 
 body {
   height: 100%;
   font-family: "Noto Sans";
+  color: $color-on-background;
+  margin: 0 !important;
+}
+
+div {
+  color: $color-on-background !important;
 }
 
 div.p-card.p-component {
-  background-color: #4f4f4f;
+  background-color: $background-color;
 }
 
 button.p-element.p-button.p-component {
-  background: #a503e5;
-  border: #a503e5;
+  background: $button-background-color;
+  border: $button-background-color;
+}
+
+span .p-calendar {
+  width: 100% !important;
+}
+
+.p-component.p-datepicker {
+  background-color: $background-color !important;
+}
+
+div.p-datepicker-header {
+  background-color: $background-color !important;
+}
+
+.p-datepicker-title > button {
+  color: $color-on-background !important;
+}
+
+.p-float-label input.p-filled ~ label {
+  color: $color-on-background !important;
+}
+
+.p-float-label input:focus ~ label {
+  color: $color-on-background !important;
+}
+
+.p-float-label .p-inputwrapper-filled ~ label {
+  color: $color-on-background !important;
+}
+
+a:visited {
+  color: white;
 }

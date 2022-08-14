@@ -1,0 +1,81 @@
+<div *ngIf="errors.length > 0" class="pt-3">
+  <div *ngFor="let error of errors; index as i">
+    <small *ngIf="error.error === 'required'"
+    >*Le champ {{ error.control }} est obligatoire.</small
+    >
+
+    <small *ngIf="error.error === 'max'"
+    >*La valeur maximale du champ {{ error.control }} est de :
+      {{ error.value.max }}.</small
+    >
+
+    <small *ngIf="error.error === 'min'"
+    >*La valeur minimale du champ {{ error.control }} est de :
+      {{ error.value.min }}.</small
+    >
+
+    <small *ngIf="error.error === 'maxlength'"
+    >*La longueur maximale du champ {{ error.control }} est de :
+      {{ error.value.requiredLength }}. Actuellement
+      {{ error.value.actualLength }}.</small
+    >
+
+    <small *ngIf="error.error === 'minlength'"
+    >*La longueur minimale du champ {{ error.control }} est de :
+      {{ error.value.requiredLength }}.</small
+    >
+
+    <small *ngIf="error.error === 'shouldBeSmallerThan'"
+    >*La borne de début ne peut pas être plus grande que la borne de
+      fin.</small
+    >
+
+    <small *ngIf="error.error === 'numBpPatternException'"
+    >*Le champ {{ error.control }} ne respecte pas le format attendu.</small
+    >
+
+    <small *ngIf="error.error === 'enseigneOrRaisonSocialeRequired'"
+    >*L'enseigne ou la raison sociale sont nécessaires.</small
+    >
+
+    <small *ngIf="error.error === 'pattern'"
+    >*Le champ {{ error.control }} ne respecte pas le format attendu.</small
+    >
+    <small *ngIf="error.error === 'requiredCustomName'"
+    >*Le champ {{ error.value }} est obligatoire.</small
+    >
+
+    <small *ngIf="error.error === 'validRib'"
+    >*Le RIB entrée est invalide.</small
+    >
+
+    <small *ngIf="error.error === 'validBanque'"
+    >*Le code banque saisie ne fait pas partie des codes banques
+      autorisés.</small
+    >
+
+    <small *ngIf="error.error === 'isNotEmpty'"
+    >*Le champ {{ error.control }} ne peut pas être vide.</small
+    >
+
+    <small *ngIf="error.error === 'greatherThan'"
+    >*Le champ {{ error.control }}{{ error.value }}</small
+    >
+
+    <small *ngIf="error.error === 'isDirtyThanShouldBeGreatherThan'"
+    >*Le champ {{ error.control }}{{ error.value }}</small
+    >
+
+    <small *ngIf="error.error === 'joursOuvresOuvrables'"
+    >*Le champ {{ error.control }}{{ error.value }}</small
+    >
+
+    <small *ngIf="error.error === 'shouldBeInPast'"
+    >*La date {{ error.control }} doit être passée.</small
+    >
+
+    <small *ngIf="error.error === 'passwordsNonIdentical'"
+    >*Les mots de passe ne sont pas identiques.</small
+    >
+  </div>
+</div>

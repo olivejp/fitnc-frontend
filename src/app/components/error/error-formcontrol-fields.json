@@ -1,0 +1,92 @@
+{
+  "app-admin-calendrier-facturation-create-update": {
+    "anneeFacturation": "Année de facturation",
+    "dateDebutRecouvrement": "Date début",
+    "dateFinRecouvrement": "Date fin",
+    "dateFacturationAnnuelle": "Date de la facturation annuelle",
+    "nbJoursEditionFacture": "Nombre de jours avant édition de la facture",
+    "dateEditionFacture": "Date d'édition des factures",
+    "dateDebutLimiteModificationPrelevement": "Date de début de la limitation de la saisie des prélèvements",
+    "nbJoursLimiteModificationPrelevement": "Nombre de jours de la limitation de la saisie des prélèvements",
+    "dateFinLimiteModificationPrelevement": "Date de fin de la limitation de la saisie des prélèvements",
+    "datePrelevementNonOfficiels": "Date de prélèvement des non officiels",
+    "datePrelevementOfficiels": "Date de prélèvement des officiels",
+    "dateLimitePaiementNonOfficiels": "Date limite de paiement des non officiels",
+    "dateLimitePaiementOfficiels": "Date limite de paiement des officiels",
+    "dateResiliationNonPaiement": "Date de résiliation",
+    "nbJoursApplicationLimitePaiementNonOfficiels": "Nombre de jours avant application de la limite de paiement des non officiels",
+    "nbJoursApplicationLimitePaiementOfficiels": "Nombre de jours avant application de la limite de paiement des officiels",
+    "dateApplicationPenalitesNonPaiementNonOfficiels": "Date d'application des pénalités pour non paiement des non officiels",
+    "dateApplicationPenalitesNonPaiementOfficiels": "Date d'application des pénalités pour non paiement des officiels",
+    "nbJoursApplicationFraisRemiseEnService": "Nombre de jours avant application des frais de remise en service",
+    "dateApplicationFraisRemiseEnService": "Date d'application des frais de remise en service"
+  },
+  "app-tarif-create-modify": {
+    "typeTarif": "Type Tarif",
+    "tarifHT": "Montant HT / Taux (%)",
+    "tarifTTC": "Montant (TTC)",
+    "tauxTGC": "Taux TGC (%)",
+    "dateApplication": "Date d'application"
+  },
+  "app-admin-taxes-create-update": {
+    "typeTaxe": "Type taxe",
+    "montant": "Taux (%)",
+    "dateApplication": "Date d'application"
+  },
+  "app-reglement": {
+    "typeReglement": "Type de réglement",
+    "intituleCompte": "Intitulé compte",
+    "codeBanque": "Code banque",
+    "codeGuichet": "Code guichet",
+    "compte": "Compte",
+    "cleRib": "Clé",
+    "bonCommande": "Bon de commande"
+  },
+  "app-resiliation": {
+    "motif": "Motif de résiliation",
+    "date": "Date de résiliation",
+    "verificationTitulaire": "Vérification du titulaire",
+    "verificationDossier": "Vérification du dossier"
+  },
+  "app-simulation": {
+    "typeContrat": "Type contrat",
+    "type": "Type",
+    "format": "Format",
+    "agence": "Agence",
+    "localisation": "Localisation"
+  },
+  "app-titulaire": {
+    "idRefcli": "Id Refcli",
+    "raisonSociale": "Raison Sociale",
+    "sigle": "Sigle",
+    "ridetSiret": "Ridet",
+    "enseigneCommerciale": "Enseigne",
+    "numeroDossier": "Dossier de société",
+    "nomUsage": "Nom usage",
+    "prenom1": "Prenom 1",
+    "dateNaissance": "Date de naissance",
+    "departementCommune": "Departement de naissance",
+    "nomNaissance": "Nom naissance",
+    "prenom2": "Prenom 2",
+    "codePays": "Pays de naissance",
+    "lieuNaissance": "Lieu de naissance",
+    "telephoneFixe": "Téléphone fixe",
+    "email": "Email",
+    "telephoneMobile": "Téléphone mobile"
+  },
+  "app-adresse": {
+    "pointRemise": "Point de remise",
+    "complement": "Complement",
+    "ville": "Ville",
+    "pays": "Pays",
+    "bp": "Boite postale",
+    "codePostal": "Code postal",
+    "numEtVoie": "Numéro et voie",
+    "lieuDit": "Lieu dit"
+  },
+  "app-create-produit": {
+    "observation": "Observation",
+    "codePostal": "Code postal",
+    "numBP": "Numéro"
+  }
+}

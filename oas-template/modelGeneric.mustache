@@ -1,0 +1,20 @@
+export interface {{classname}}{{#allParents}}{{#-first}} extends {{/-first}}{{{.}}}{{^-last}}, {{/-last}}{{/allParents}} { {{>modelGenericAdditionalProperties}}
+{{#vars}}
+    {{#description}}
+    /**
+     * {{{description}}}
+     */
+    {{/description}}
+    {{#isReadOnly}}readonly {{/isReadOnly}}{{{name}}}{{^required}}?{{/required}}: {{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}{{#isNullable}} | null{{/isNullable}};
+{{/vars}}
+}{{>modelGenericEnums}}
+
+export class {{classname}}_ {
+{{#vars}}
+  static readonly {{{name}}} = '{{{name}}}';
+  readonly {{{name}}} = '{{{name}}}';
+{{/vars}}
+  static fields() {
+    return new {{classname}}_();
+  }
+}

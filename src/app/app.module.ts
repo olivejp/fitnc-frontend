@@ -14,7 +14,12 @@ import {SignInComponent} from './components/sign-in/sign-in.component';
 import {JWT_OPTIONS, JwtModule} from "@auth0/angular-jwt";
 import {LocalStorageService, NgxWebstorageModule, SessionStorageService} from "ngx-webstorage";
 import {PrimengModule} from "./shared/primeng.module";
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SignUpComponent} from './components/sign-up/sign-up.component';
+import {SharedModule} from "./shared/shared.module";
+import {CreateAccountComponent} from "./components/create-account/create-account.component";
+import { ErrorComponent } from './components/error/error.component';
 
 export const prefix = 'fitnc';
 export const tokenName = 'token';
@@ -42,12 +47,17 @@ export function jwtOptionsFactory(
   declarations: [
     AppComponent,
     SignInComponent,
-    DashboardComponent
+    DashboardComponent,
+    SignUpComponent,
+    CreateAccountComponent,
+    ErrorComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     HttpClientModule,
     BrowserModule,
     PrimengModule,
+    SharedModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
