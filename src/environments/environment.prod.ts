@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  backendServer: 'localhost:8080',
+  backendServer: 'fitnc-7be2e.ts.r.appspot.com',
   backendProtocol: 'http://',
   firebase: {
     apiKey: "AIzaSyCh1JXX3tFZs3LKBxSxd8mCx-bIfCHvNCM",
